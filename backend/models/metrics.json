@@ -1,0 +1,25 @@
+{
+  "model_type": "Ridge Regression with StandardScaler",
+  "dataset_samples": 500,
+  "train_samples": 400,
+  "test_samples": 100,
+  "features": [
+    "previous_score",
+    "quiz_accuracy",
+    "attempts_count",
+    "completion_rate",
+    "study_hours"
+  ],
+  "mae": 2.71,
+  "mse": 11.575,
+  "rmse": 3.402,
+  "r2_score": 0.9074,
+  "feature_weights": {
+    "previous_score": 3.0159,
+    "quiz_accuracy": 5.0632,
+    "attempts_count": 1.0456,
+    "completion_rate": 1.7413,
+    "study_hours": 2.9675
+  },
+  "intercept": 47.8077
+}

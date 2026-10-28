@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Progress Report - SkillAdapt</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+      
+      <!-- Page Header & Action Buttons -->
+      <header class="page-header">
+        <div>
+          <h1 class="page-title">Academic Progress & Evaluation Report</h1>
+          <p class="page-subtitle">Official personalized assessment report and machine learning performance forecast.</p>
+        </div>
+        <div style="display: flex; gap: 0.75rem;" class="no-print">
+          <button id="btn-download-csv" class="btn btn-secondary">
+            <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download CSV Report
+          </button>
+          <button id="btn-print-report" class="btn btn-primary">
+            <svg style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+            </svg>
+            Print Report / PDF
+          </button>
+        </div>
+      </header>
+
+      <!-- Loading State -->
+      <div id="report-loading" style="text-align: center; padding: 3rem;">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">
+          Compiling student academic record and predictive models...
+        </div>
+      </div>
+
+      <!-- Printable Report Container -->
+      <div id="report-content" style="display: none;">
+        
+        <!-- Student Info Header Card -->
+        <section class="card" style="margin-bottom: 2rem; border-top: 4px solid var(--primary);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700; text-transform: uppercase; margin-bottom: 0.25rem;">
+                SkillAdapt Academic Evaluation Report
+              </div>
+              <h2 id="report-student-name" style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">
+                Student Name
+              </h2>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">
+                ID: <code id="report-student-id">STD_0000</code> &bull; Username: <code id="report-student-username">username</code> &bull; Email: <span id="report-student-email">email@college.edu</span>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Report Date</div>
+              <div id="report-generated-date" style="font-weight: 600; color: var(--text-main);">Current Date</div>
+              <div style="margin-top: 0.25rem;">
+                Status: <span id="report-learning-level" class="badge badge-medium">Intermediate Student</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Executive Summary Highlights -->
+        <section class="grid-cols-4" style="margin-bottom: 2rem;">
+          <div class="card" style="padding: 1.25rem;">
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Overall Average</div>
+            <div id="report-avg-score" style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-top: 0.25rem;">0%</div>
+          </div>
+          <div class="card" style="padding: 1.25rem;">
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Quizzes Attempted</div>
+            <div id="report-total-quizzes" style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-top: 0.25rem;">0</div>
+          </div>
+          <div class="card" style="padding: 1.25rem;">
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Completed Topics</div>
+            <div id="report-completed-topics" style="font-size: 1.8rem; font-weight: 800; color: var(--success); margin-top: 0.25rem;">0</div>
+          </div>
+          <div class="card" style="padding: 1.25rem;">
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Strongest Topic</div>
+            <div id="report-strongest-topic" style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-top: 0.5rem;">Evaluating...</div>
+          </div>
+        </section>
+
+        <!-- Predictive AI Performance Analytics Section -->
+        <section class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h3 class="card-title">Machine Learning Performance Projection (Scikit-learn)</h3>
+            <span class="badge badge-medium">Predictive Model</span>
+          </div>
+          <div id="report-prediction-box"></div>
+        </section>
+
+        <!-- Topic Mastery Ledger Table -->
+        <section class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h3 class="card-title">Topic-Wise Competency Analysis</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Topic</th>
+                  <th>Subject</th>
+                  <th>Questions Answered</th>
+                  <th>Accuracy</th>
+                  <th>Evaluation</th>
+                </tr>
+              </thead>
+              <tbody id="report-topics-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Quiz Attempts History Table -->
+        <section class="card">
+          <div class="card-header">
+            <h3 class="card-title">Completed Quiz Attempts Ledger</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Attempt ID</th>
+                  <th>Subject</th>
+                  <th>Date Completed</th>
+                  <th>Difficulty Distribution</th>
+                  <th>Score Earned</th>
+                  <th>Accuracy</th>
+                </tr>
+              </thead>
+              <tbody id="report-attempts-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>

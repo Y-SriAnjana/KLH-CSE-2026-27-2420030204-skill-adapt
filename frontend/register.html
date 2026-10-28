@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration - SkillAdapt</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1rem;
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-subtle) 100%);
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-xl);
+    }
+    .auth-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div class="auth-header">
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+        <div class="brand-icon">S</div>
+        <div class="brand-name">Skill<span>Adapt</span></div>
+      </div>
+      <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--text-main);">Create Student Account</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
+        Join SkillAdapt to unlock individualized computer science learning.
+      </p>
+    </div>
+
+    <div id="auth-alert" class="alert" style="display: none;"></div>
+
+    <form id="register-form">
+      <div class="form-group">
+        <label for="full_name" class="form-label">Full Name</label>
+        <input type="text" id="full_name" class="form-input" placeholder="e.g. Jordan Smith" required>
+      </div>
+
+      <div class="grid-cols-2" style="margin-bottom: 0; gap: 1rem;">
+        <div class="form-group">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" id="username" class="form-input" placeholder="e.g. jsmith22" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">College Email</label>
+          <input type="email" id="email" class="form-input" placeholder="jsmith@college.edu" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="grid-cols-2" style="margin-bottom: 0; gap: 1rem;">
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-input" placeholder="Min 6 characters" required autocomplete="new-password">
+        </div>
+        <div class="form-group">
+          <label for="confirm_password" class="form-label">Confirm Password</label>
+          <input type="password" id="confirm_password" class="form-input" placeholder="Repeat password" required autocomplete="new-password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="learning_level" class="form-label">Starting Skill Assessment</label>
+        <select id="learning_level" class="form-select">
+          <option value="Beginner">Beginner (Foundational concepts & syntax)</option>
+          <option value="Intermediate">Intermediate (Algorithms & data structures)</option>
+          <option value="Advanced">Advanced (Systems design & optimization)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; padding: 0.75rem;">
+        Create Account &rarr;
+      </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 1.75rem; font-size: 0.9rem; color: var(--text-muted);">
+      Already have an account? 
+      <a href="login.html" style="font-weight: 600; color: var(--primary);">Sign in here</a>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

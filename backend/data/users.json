@@ -1,0 +1,28 @@
+[
+  {
+    "id": "std_demo_01",
+    "username": "demo_student",
+    "email": "demo.student@skilladapt.edu",
+    "full_name": "Alex Morgan",
+    "password_hash": "d6e5b45abf5106ca28b39db997461028:3fb0fd8c085f61c469d4bdcbf65705ab6805a8e6718c6ee1bbd7ed18f3632df7",
+    "learning_level": "Intermediate",
+    "completed_resources": [
+      "RES_PY_01",
+      "RES_DS_01",
+      "RES_SQL_01",
+      "RES_JAVA_04",
+      "RES_PY_03"
+    ],
+    "created_at": "2026-10-14T10:41:30.884550"
+  },
+  {
+    "id": "std_2516ec42a1bb",
+    "username": "test_student_unit",
+    "email": "unittest@skilladapt.edu",
+    "full_name": "Unit Test Student",
+    "password_hash": "b9bce561119bcec867f606fc791a5311:2e73389953ddd99934d0101f3b886cbcaaff022f5814fc604e78aa2be647107b",
+    "learning_level": "Beginner",
+    "completed_resources": [],
+    "created_at": "2026-10-28T10:45:26.327421"
+  }
+]

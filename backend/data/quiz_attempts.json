@@ -1,0 +1,440 @@
+[
+  {
+    "attempt_id": "att_001",
+    "user_id": "std_demo_01",
+    "subject": "Python",
+    "topic": "Python Basics & Syntax",
+    "total_questions": 5,
+    "correct_answers": 4,
+    "score": 7,
+    "max_score": 8,
+    "percentage": 87.5,
+    "difficulty_breakdown": {
+      "Easy": 3,
+      "Medium": 2,
+      "Hard": 0
+    },
+    "adaptive_path": [
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Hard"
+    ],
+    "responses": [
+      {
+        "question_id": "PY_001",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Python Basics & Syntax"
+      },
+      {
+        "question_id": "PY_002",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Python Basics & Syntax"
+      },
+      {
+        "question_id": "PY_003",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Control Flow & Loops"
+      },
+      {
+        "question_id": "PY_004",
+        "is_correct": true,
+        "marks": 2,
+        "difficulty": "Medium",
+        "topic": "Functions & Scope"
+      },
+      {
+        "question_id": "PY_006",
+        "is_correct": false,
+        "marks": 0,
+        "difficulty": "Hard",
+        "topic": "Object-Oriented Python"
+      }
+    ],
+    "started_at": "2026-10-18T10:41:30.886072",
+    "completed_at": "2026-10-18T10:53:30.886072"
+  },
+  {
+    "attempt_id": "att_002",
+    "user_id": "std_demo_01",
+    "subject": "Data Structures",
+    "topic": "Arrays & Strings",
+    "total_questions": 5,
+    "correct_answers": 4,
+    "score": 6,
+    "max_score": 7,
+    "percentage": 85.7,
+    "difficulty_breakdown": {
+      "Easy": 3,
+      "Medium": 2,
+      "Hard": 0
+    },
+    "adaptive_path": [
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Hard"
+    ],
+    "responses": [
+      {
+        "question_id": "DS_001",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Arrays & Strings"
+      },
+      {
+        "question_id": "DS_002",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Stacks & Queues"
+      },
+      {
+        "question_id": "DS_003",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Linked Lists"
+      },
+      {
+        "question_id": "DS_004",
+        "is_correct": true,
+        "marks": 2,
+        "difficulty": "Medium",
+        "topic": "Trees & Binary Search Trees"
+      },
+      {
+        "question_id": "DS_006",
+        "is_correct": false,
+        "marks": 0,
+        "difficulty": "Hard",
+        "topic": "Graphs & Graph Algorithms"
+      }
+    ],
+    "started_at": "2026-10-21T10:41:30.886072",
+    "completed_at": "2026-10-21T10:55:30.886072"
+  },
+  {
+    "attempt_id": "att_003",
+    "user_id": "std_demo_01",
+    "subject": "SQL",
+    "topic": "SELECT & Basic Filtering",
+    "total_questions": 5,
+    "correct_answers": 5,
+    "score": 8,
+    "max_score": 8,
+    "percentage": 100.0,
+    "difficulty_breakdown": {
+      "Easy": 3,
+      "Medium": 1,
+      "Hard": 1
+    },
+    "adaptive_path": [
+      "Easy",
+      "Easy",
+      "Medium",
+      "Hard",
+      "Hard"
+    ],
+    "responses": [
+      {
+        "question_id": "SQL_001",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "SELECT & Basic Filtering"
+      },
+      {
+        "question_id": "SQL_002",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "SELECT & Basic Filtering"
+      },
+      {
+        "question_id": "SQL_003",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Joins & Set Operations"
+      },
+      {
+        "question_id": "SQL_004",
+        "is_correct": true,
+        "marks": 2,
+        "difficulty": "Medium",
+        "topic": "Aggregations & GROUP BY"
+      },
+      {
+        "question_id": "SQL_006",
+        "is_correct": true,
+        "marks": 3,
+        "difficulty": "Hard",
+        "topic": "Indexing & Query Optimization"
+      }
+    ],
+    "started_at": "2026-10-23T10:41:30.886072",
+    "completed_at": "2026-10-23T10:51:30.886072"
+  },
+  {
+    "attempt_id": "att_004",
+    "user_id": "std_demo_01",
+    "subject": "Java",
+    "topic": "Java Syntax & Basics",
+    "total_questions": 5,
+    "correct_answers": 3,
+    "score": 4,
+    "max_score": 7,
+    "percentage": 57.1,
+    "difficulty_breakdown": {
+      "Easy": 3,
+      "Medium": 2,
+      "Hard": 0
+    },
+    "adaptive_path": [
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Easy"
+    ],
+    "responses": [
+      {
+        "question_id": "JAVA_001",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Java Syntax & Basics"
+      },
+      {
+        "question_id": "JAVA_002",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Java Syntax & Basics"
+      },
+      {
+        "question_id": "JAVA_003",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "OOP Concepts in Java"
+      },
+      {
+        "question_id": "JAVA_004",
+        "is_correct": false,
+        "marks": 0,
+        "difficulty": "Medium",
+        "topic": "OOP Concepts in Java"
+      },
+      {
+        "question_id": "JAVA_005",
+        "is_correct": false,
+        "marks": 0,
+        "difficulty": "Medium",
+        "topic": "Collections Framework"
+      }
+    ],
+    "started_at": "2026-10-25T10:41:30.886072",
+    "completed_at": "2026-10-25T10:52:30.886072"
+  },
+  {
+    "attempt_id": "att_005",
+    "user_id": "std_demo_01",
+    "subject": "Machine Learning",
+    "topic": "Supervised Learning",
+    "total_questions": 5,
+    "correct_answers": 2,
+    "score": 2,
+    "max_score": 7,
+    "percentage": 28.6,
+    "difficulty_breakdown": {
+      "Easy": 3,
+      "Medium": 1,
+      "Hard": 1
+    },
+    "adaptive_path": [
+      "Easy",
+      "Easy",
+      "Medium",
+      "Easy",
+      "Easy"
+    ],
+    "responses": [
+      {
+        "question_id": "ML_001",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Supervised Learning"
+      },
+      {
+        "question_id": "ML_002",
+        "is_correct": true,
+        "marks": 1,
+        "difficulty": "Easy",
+        "topic": "Supervised Learning"
+      },
+      {
+        "question_id": "ML_004",
+        "is_correct": false,
+        "marks": 0,
+        "difficulty": "Medium",
+        "topic": "Model Evaluation & Metrics"
+      },
+      {
+        "question_id": "ML_005",
+        "is_correct": false,
+        "marks": 0,
+        "difficulty": "Medium",
+        "topic": "Preprocessing & Feature Engineering"
+      },
+      {
+        "question_id": "ML_006",
+        "is_correct": false,
+        "marks": 0,
+        "difficulty": "Hard",
+        "topic": "Overfitting & Regularization"
+      }
+    ],
+    "started_at": "2026-10-27T10:41:30.886072",
+    "completed_at": "2026-10-27T10:56:30.886072"
+  },
+  {
+    "attempt_id": "att_1ad839399af6",
+    "user_id": "std_demo_01",
+    "subject": "Python",
+    "topic": "Exception Handling & File I/O",
+    "total_questions": 3,
+    "correct_answers": 2,
+    "score": 2,
+    "max_score": 4,
+    "percentage": 50.0,
+    "difficulty_breakdown": {
+      "Easy": 2,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "adaptive_path": [
+      "Easy",
+      "Medium",
+      "Easy"
+    ],
+    "responses": [
+      {
+        "question_id": "PY_009",
+        "subject": "Python",
+        "topic": "Exception Handling & File I/O",
+        "difficulty": "Easy",
+        "question_text": "Which clause in a Python try/except block is guaranteed to execute regardless of whether an exception occurred or was handled?",
+        "selected_option": "finally",
+        "correct_answer": "finally",
+        "is_correct": true,
+        "marks_earned": 1,
+        "max_marks": 1,
+        "explanation": "The `finally` block always executes during clean-up actions, whether an exception was raised, handled, or even if return was called."
+      },
+      {
+        "question_id": "PY_005",
+        "subject": "Python",
+        "topic": "Functions & Scope",
+        "difficulty": "Medium",
+        "question_text": "What does the *args and **kwargs syntax in a Python function definition allow?",
+        "selected_option": "Deliberately Wrong Answer That Never Matches",
+        "correct_answer": "Passing variable numbers of positional and keyword arguments respectively",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 2,
+        "explanation": "*args collects arbitrary positional arguments as a tuple, while **kwargs collects arbitrary keyword arguments as a dictionary."
+      },
+      {
+        "question_id": "PY_012",
+        "subject": "Python",
+        "topic": "Exception Handling & File I/O",
+        "difficulty": "Easy",
+        "question_text": "What happens when using the `with open(...) as f:` context manager in Python?",
+        "selected_option": "The file descriptor is automatically closed upon leaving the block, even if an exception occurs",
+        "correct_answer": "The file descriptor is automatically closed upon leaving the block, even if an exception occurs",
+        "is_correct": true,
+        "marks_earned": 1,
+        "max_marks": 1,
+        "explanation": "The context manager protocol calls `__enter__` on entry and `__exit__` on departure, ensuring resources are reliably freed."
+      }
+    ],
+    "started_at": "2026-10-28T10:45:26.547045",
+    "completed_at": "2026-10-28T10:45:26.550478"
+  },
+  {
+    "attempt_id": "att_c9319b9399cd",
+    "user_id": "std_demo_01",
+    "subject": "Python",
+    "topic": "Control Flow & Loops",
+    "total_questions": 3,
+    "correct_answers": 2,
+    "score": 2,
+    "max_score": 4,
+    "percentage": 50.0,
+    "difficulty_breakdown": {
+      "Easy": 2,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "adaptive_path": [
+      "Easy",
+      "Medium",
+      "Easy"
+    ],
+    "responses": [
+      {
+        "question_id": "PY_003",
+        "subject": "Python",
+        "topic": "Control Flow & Loops",
+        "difficulty": "Easy",
+        "question_text": "What will `range(2, 10, 3)` produce when converted to a list?",
+        "selected_option": "[2, 5, 8]",
+        "correct_answer": "[2, 5, 8]",
+        "is_correct": true,
+        "marks_earned": 1,
+        "max_marks": 1,
+        "explanation": "range(start, stop, step) starts at 2, increments by 3, and stops strictly before 10: 2, 5, 8."
+      },
+      {
+        "question_id": "PY_004",
+        "subject": "Python",
+        "topic": "Functions & Scope",
+        "difficulty": "Medium",
+        "question_text": "How does Python handle default mutable arguments (like def f(x=[]) )?",
+        "selected_option": "Deliberately Wrong Answer That Never Matches",
+        "correct_answer": "The list is instantiated once at function definition time and shared across calls",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 2,
+        "explanation": "Default argument expressions are evaluated once when the function definition is executed, leading to a persistent mutable object across invocations."
+      },
+      {
+        "question_id": "PY_001",
+        "subject": "Python",
+        "topic": "Python Basics & Syntax",
+        "difficulty": "Easy",
+        "question_text": "Which of the following is an immutable data type in Python?",
+        "selected_option": "Tuple",
+        "correct_answer": "Tuple",
+        "is_correct": true,
+        "marks_earned": 1,
+        "max_marks": 1,
+        "explanation": "Tuples in Python cannot be modified once created, making them immutable. Lists, dictionaries, and sets are mutable."
+      }
+    ],
+    "started_at": "2026-10-28T10:54:14.914022",
+    "completed_at": "2026-10-28T10:54:14.915754"
+  }
+]

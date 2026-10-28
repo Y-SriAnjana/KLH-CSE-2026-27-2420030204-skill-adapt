@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillAdapt - Adaptive AI-Based Personalized Learning Assistant</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero-section {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--primary-subtle) 100%);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      background-color: var(--primary-light);
+      color: var(--primary-hover);
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text-main);
+      max-width: 800px;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title span {
+      color: var(--primary);
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background-color: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .demo-callout {
+      background: var(--bg-surface);
+      border: 1.5px dashed var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      max-width: 650px;
+      margin: 0 auto 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header style="background: white; border-bottom: 1px solid var(--border-color); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="brand-icon">S</div>
+      <div class="brand-name">Skill<span>Adapt</span></div>
+    </div>
+    <div style="display: flex; gap: 0.75rem;" id="nav-auth-buttons">
+      <a href="login.html" class="btn btn-outline">Sign In</a>
+      <a href="register.html" class="btn btn-primary">Register Free</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-badge">&starf; Intelligent Adaptive Learning Platform</div>
+    <h1 class="hero-title">
+      Learn Smarter with <span>Adaptive AI</span> Personalized to Your Mastery
+    </h1>
+    <p class="hero-subtitle">
+      SkillAdapt personalizes computer science education by adapting quiz difficulty in real time, pinpointing weak concepts, prescribing custom learning pathways, and forecasting academic performance using Machine Learning.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="login.html" class="btn btn-primary btn-lg">Launch Student Portal &rarr;</a>
+      <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
+    </div>
+
+    <!-- Quick Demo Box -->
+    <div class="demo-callout">
+      <div style="text-align: left;">
+        <div style="font-weight: 700; color: var(--text-main); font-size: 1rem; margin-bottom: 0.25rem;">
+          College Academic Project Demo Account
+        </div>
+        <div style="font-size: 0.9rem; color: var(--text-muted);">
+          Username: <code>demo_student</code> &bull; Password: <code>Student@123</code>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-primary" onclick="localStorage.setItem('autofill_demo', '1')">
+        1-Click Demo Login
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section id="features" style="background: var(--bg-main); padding-top: 2rem;">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto 2.5rem;">
+      <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">
+        Core Architectural Capabilities
+      </h2>
+      <p style="color: var(--text-muted);">
+        A complete, full-stack educational environment engineered for academic demonstrations and real-world student success.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&target;</div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Dynamic Adaptive Quizzing</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Difficulty scales dynamically between Easy, Medium, and Hard based on consecutive correct responses and error recovery algorithms.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&chart_with_upwards_trend;</div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Strength & Weakness Classifier</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Classifies every computer science topic into Strong (80%+), Developing (50-79%), or Needs Improvement (<50%) with evidence thresholds.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#129302;</div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Scikit-learn Performance Forecast</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Trained regularized Ridge Regression pipeline predicting future exam scores ($R^2 > 0.90$) with confidence intervals and pedagogical insights.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128218;</div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Curated Learning Paths</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Prioritizes weak topics first, enforces prerequisite knowledge trees, and maintains persistent completion tracking.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Interactive Chart.js Visuals</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Real-time score progression trends and topic mastery distributions powered by Chart.js without hardcoded data.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128196;</div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;">Audit Reports & CSV Export</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem;">
+          Downloadable progress records in CSV format, printable academic transcripts, and full response ledger history.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background: white; border-top: 1px solid var(--border-color); padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+    SkillAdapt &copy; 2026 &bull; An Adaptive AI-Based Personalized Learning Assistant &bull; Built with FastAPI, Scikit-learn, and Vanilla JS.
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    // Update navbar if already logged in
+    const token = getToken();
+    if (token) {
+      const container = document.getElementById("nav-auth-buttons");
+      if (container) {
+        container.innerHTML = `
+          <a href="dashboard.html" class="btn btn-primary">Go to Dashboard &rarr;</a>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

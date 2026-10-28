@@ -1,0 +1,392 @@
+[
+  {
+    "resource_id": "RES_PY_01",
+    "subject": "Python",
+    "topic": "Python Basics & Syntax",
+    "prerequisites": [],
+    "title": "Mastering Python Data Types & Immutability",
+    "description": "Comprehensive guide covering primitive data types, tuples vs lists, set theory, and memory representation in Python.",
+    "learning_objectives": [
+      "Understand mutable vs immutable objects in CPython",
+      "Learn memory address inspection using id() and is operator",
+      "Practice slicing, type casting, and literal notation"
+    ],
+    "estimated_minutes": 25,
+    "difficulty": "Beginner",
+    "resource_type": "Concept Guide",
+    "summary_content": "In Python, objects are either mutable (can change in-place) or immutable (cannot be altered once allocated). Tuples, strings, and ints are immutable; lists, dictionaries, and sets are mutable. Understanding this distinction prevents common reference bugs.",
+    "reference_url": "https://docs.python.org/3/tutorial/datastructures.html"
+  },
+  {
+    "resource_id": "RES_PY_02",
+    "subject": "Python",
+    "topic": "Control Flow & Loops",
+    "prerequisites": [
+      "Python Basics & Syntax"
+    ],
+    "title": "Iterators, Comprehensions, and Control Flow",
+    "description": "Deep-dive into pythonic loop constructs, range generators, list comprehensions, and loop else clauses.",
+    "learning_objectives": [
+      "Implement clean list, dict, and set comprehensions",
+      "Master while/else and for/else behavior with break/continue",
+      "Utilize enumerate() and zip() for efficient iteration"
+    ],
+    "estimated_minutes": 30,
+    "difficulty": "Intermediate",
+    "resource_type": "Interactive Tutorial",
+    "summary_content": "Python's iteration model allows idiomatic looping. The `for...else` pattern triggers only when the loop completes without hitting `break`. List comprehensions provide an expressive, optimized alternative to explicit map and filter loops.",
+    "reference_url": "https://docs.python.org/3/tutorial/controlflow.html"
+  },
+  {
+    "resource_id": "RES_PY_03",
+    "subject": "Python",
+    "topic": "Functions & Scope",
+    "prerequisites": [
+      "Control Flow & Loops"
+    ],
+    "title": "Advanced Functions: *args, **kwargs & Closures",
+    "description": "Demystify parameter packing/unpacking, default argument traps, scope resolution (LEGB), and inner closures.",
+    "learning_objectives": [
+      "Avoid default mutable argument traps",
+      "Apply *args and **kwargs in flexible wrapper APIs",
+      "Understand Local, Enclosing, Global, and Built-in (LEGB) scoping"
+    ],
+    "estimated_minutes": 35,
+    "difficulty": "Intermediate",
+    "resource_type": "Code Walkthrough",
+    "summary_content": "Functions in Python are first-class citizens. Avoid `def func(lst=[])` because default values are evaluated once when defined. Use `lst=None` and initialize inside the function body.",
+    "reference_url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions"
+  },
+  {
+    "resource_id": "RES_PY_04",
+    "subject": "Python",
+    "topic": "Object-Oriented Python",
+    "prerequisites": [
+      "Functions & Scope"
+    ],
+    "title": "Python OOP: MRO, Magic Methods & Memory Optimization",
+    "description": "Master multiple inheritance with C3 linearization, dunder methods (__str__, __repr__, __eq__), and __slots__.",
+    "learning_objectives": [
+      "Inspect class Method Resolution Order using Class.mro()",
+      "Optimize high-volume object memory with __slots__",
+      "Design robust abstract base classes with abc.ABCMeta"
+    ],
+    "estimated_minutes": 45,
+    "difficulty": "Advanced",
+    "resource_type": "Concept Guide",
+    "summary_content": "Python uses the C3 Linearization algorithm to safely resolve method calls in multiple inheritance hierarchies without ambiguous diamond problems. Defining `__slots__` prevents per-instance dictionary creation, reducing memory footprint by up to 40%.",
+    "reference_url": "https://docs.python.org/3/tutorial/classes.html"
+  },
+  {
+    "resource_id": "RES_JAVA_01",
+    "subject": "Java",
+    "topic": "Java Syntax & Basics",
+    "prerequisites": [],
+    "title": "Java Fundamentals: Types, Variables & Memory",
+    "description": "Essential Java foundational concepts including primitive types, reference types, stack vs heap allocation, and JVM execution.",
+    "learning_objectives": [
+      "Differentiate primitive types from wrapper classes",
+      "Understand JVM bytecodes and garbage collection fundamentals",
+      "Master variable scope, access modifiers, and type casting"
+    ],
+    "estimated_minutes": 25,
+    "difficulty": "Beginner",
+    "resource_type": "Concept Guide",
+    "summary_content": "Java is statically typed. Primitive types (byte, short, int, long, float, double, char, boolean) store values directly on the stack or in objects, while references store pointers to heap-allocated objects.",
+    "reference_url": "https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html"
+  },
+  {
+    "resource_id": "RES_JAVA_02",
+    "subject": "Java",
+    "topic": "OOP Concepts in Java",
+    "prerequisites": [
+      "Java Syntax & Basics"
+    ],
+    "title": "Polymorphism, Inheritance & Interface Design",
+    "description": "Master dynamic method dispatch, method overloading vs overriding, abstract classes, and default interface methods.",
+    "learning_objectives": [
+      "Implement runtime polymorphism via method overriding",
+      "Design clean interfaces following SOLID principles",
+      "Use final and sealed keywords to restrict class extension"
+    ],
+    "estimated_minutes": 35,
+    "difficulty": "Intermediate",
+    "resource_type": "Interactive Tutorial",
+    "summary_content": "Java polymorphism allows parent references to invoke overridden methods in subclasses via virtual method tables (vtable). Use `@Override` annotations to let the compiler catch method signature mismatches.",
+    "reference_url": "https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html"
+  },
+  {
+    "resource_id": "RES_JAVA_03",
+    "subject": "Java",
+    "topic": "Collections Framework",
+    "prerequisites": [
+      "OOP Concepts in Java"
+    ],
+    "title": "Deep Dive: Java Collections Framework Internals",
+    "description": "Explore internal mechanics of ArrayList, LinkedList, HashMap bucketing, and TreeSet Red-Black tree balancing.",
+    "learning_objectives": [
+      "Understand HashMap hashing, collisions, and treeification",
+      "Choose optimal collections for read vs write workloads",
+      "Implement custom Comparators and Comparable interfaces"
+    ],
+    "estimated_minutes": 40,
+    "difficulty": "Intermediate",
+    "resource_type": "Code Walkthrough",
+    "summary_content": "Java's HashMap uses an array of linked nodes that converts to Red-Black trees (TREEIFY_THRESHOLD = 8) when hash collisions accumulate in a single bucket, ensuring O(log n) worst-case lookups.",
+    "reference_url": "https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html"
+  },
+  {
+    "resource_id": "RES_JAVA_04",
+    "subject": "Java",
+    "topic": "Multithreading & Concurrency",
+    "prerequisites": [
+      "Collections Framework"
+    ],
+    "title": "Java Concurrency: Volatile, CAS & ConcurrentHashMap",
+    "description": "Advanced multi-threading patterns, Java Memory Model (JMM), thread safety, and lock-free concurrency.",
+    "learning_objectives": [
+      "Understand happens-before relationships and memory visibility",
+      "Differentiate volatile from synchronized and atomic locks",
+      "Apply concurrent collections like ConcurrentHashMap and BlockingQueue"
+    ],
+    "estimated_minutes": 50,
+    "difficulty": "Advanced",
+    "resource_type": "Concept Guide",
+    "summary_content": "The `volatile` keyword guarantees memory visibility across threads by bypassing local CPU caches, but does not provide atomicity for operations like `count++`. For atomic thread-safe mutations, utilize `AtomicInteger` or explicit locks.",
+    "reference_url": "https://docs.oracle.com/javase/tutorial/essential/concurrency/"
+  },
+  {
+    "resource_id": "RES_DS_01",
+    "subject": "Data Structures",
+    "topic": "Arrays & Strings",
+    "prerequisites": [],
+    "title": "Array Architecture, Memory Locality & Sliding Window",
+    "description": "Foundations of linear contiguous data storage, cache locality benefits, two-pointer techniques, and sliding window paradigms.",
+    "learning_objectives": [
+      "Analyze cache performance differences between arrays and node lists",
+      "Implement two-pointer and sliding window algorithms",
+      "Calculate amortized O(1) dynamic array resizing costs"
+    ],
+    "estimated_minutes": 30,
+    "difficulty": "Beginner",
+    "resource_type": "Concept Guide",
+    "summary_content": "Arrays provide O(1) random memory access due to continuous physical allocation. Dynamic arrays double capacity when full, achieving amortized O(1) append complexity despite occasional O(n) reallocations.",
+    "reference_url": "https://en.wikipedia.org/wiki/Array_data_structure"
+  },
+  {
+    "resource_id": "RES_DS_02",
+    "subject": "Data Structures",
+    "topic": "Stacks & Queues",
+    "prerequisites": [
+      "Arrays & Strings"
+    ],
+    "title": "LIFO & FIFO Applications: Monotonic Stacks & Circular Queues",
+    "description": "Practical implementations of stacks and queues, expression evaluation, parenthesis validation, and breadth-first search queues.",
+    "learning_objectives": [
+      "Implement circular queue buffers with modular indexing",
+      "Solve next-greater-element challenges using monotonic stacks",
+      "Simulate recursion using explicit stack state frames"
+    ],
+    "estimated_minutes": 35,
+    "difficulty": "Intermediate",
+    "resource_type": "Interactive Tutorial",
+    "summary_content": "Stacks enforce LIFO ordering, ideal for parsing syntax and backtracking. Queues enforce FIFO ordering, powering breadth-first search traversals and asynchronous task queues.",
+    "reference_url": "https://en.wikipedia.org/wiki/Stack_(abstract_data_type)"
+  },
+  {
+    "resource_id": "RES_DS_03",
+    "subject": "Data Structures",
+    "topic": "Trees & Binary Search Trees",
+    "prerequisites": [
+      "Stacks & Queues"
+    ],
+    "title": "Binary Trees, BSTs & Self-Balancing Trees (AVL / Red-Black)",
+    "description": "Tree traversals (inorder, preorder, postorder, level order), BST invariants, and self-balancing tree rotations.",
+    "learning_objectives": [
+      "Perform tree traversals recursively and iteratively",
+      "Identify when an un-balanced BST degrades to O(n) linear performance",
+      "Understand left and right AVL tree rotations"
+    ],
+    "estimated_minutes": 45,
+    "difficulty": "Intermediate",
+    "resource_type": "Code Walkthrough",
+    "summary_content": "A BST maintains the invariant that left children are strictly less and right children are strictly greater. In balanced trees like AVL and Red-Black trees, height is maintained at O(log n), preventing linear degradation.",
+    "reference_url": "https://en.wikipedia.org/wiki/Binary_search_tree"
+  },
+  {
+    "resource_id": "RES_DS_04",
+    "subject": "Data Structures",
+    "topic": "Graphs & Graph Algorithms",
+    "prerequisites": [
+      "Trees & Binary Search Trees"
+    ],
+    "title": "Graph Algorithms: Shortest Paths & Minimum Spanning Trees",
+    "description": "Adjacency matrix vs list, BFS/DFS, Dijkstra's algorithm, Bellman-Ford, Floyd-Warshall, and Prim/Kruskal MSTs.",
+    "learning_objectives": [
+      "Implement Dijkstra's shortest path with priority queues in O((V + E) log V)",
+      "Detect negative cycles using Bellman-Ford algorithm",
+      "Compute all-pairs shortest paths using Floyd-Warshall dynamic programming"
+    ],
+    "estimated_minutes": 50,
+    "difficulty": "Advanced",
+    "resource_type": "Concept Guide",
+    "summary_content": "Graphs represent arbitrary relationships. BFS traverses layer-by-layer to discover unweighted shortest paths. Dijkstra solves single-source shortest paths for non-negative weights using priority queues.",
+    "reference_url": "https://en.wikipedia.org/wiki/Graph_(abstract_data_type)"
+  },
+  {
+    "resource_id": "RES_SQL_01",
+    "subject": "SQL",
+    "topic": "SELECT & Basic Filtering",
+    "prerequisites": [],
+    "title": "Relational Querying: SELECT, WHERE, LIKE & Logical Operators",
+    "description": "Master SQL querying, handling NULL values with IS NULL, pattern matching with LIKE, and logical precedence.",
+    "learning_objectives": [
+      "Write clean SELECT statements with column aliases",
+      "Apply three-valued logic (TRUE, FALSE, UNKNOWN) with NULLs",
+      "Utilize IN, BETWEEN, and LIKE pattern matching"
+    ],
+    "estimated_minutes": 20,
+    "difficulty": "Beginner",
+    "resource_type": "Interactive Tutorial",
+    "summary_content": "SQL is a declarative domain-specific language. In SQL, expressions with NULL evaluate to UNKNOWN under three-valued logic, which is why explicit `IS NULL` checks are mandatory.",
+    "reference_url": "https://www.w3schools.com/sql/sql_select.asp"
+  },
+  {
+    "resource_id": "RES_SQL_02",
+    "subject": "SQL",
+    "topic": "Joins & Set Operations",
+    "prerequisites": [
+      "SELECT & Basic Filtering"
+    ],
+    "title": "Visualizing Joins: INNER, LEFT, RIGHT, FULL & CROSS Joins",
+    "description": "Comprehensive visual guide to joining relational tables, understanding Cartesian products, and preserving unmatched rows.",
+    "learning_objectives": [
+      "Distinguish between INNER JOIN and various OUTER JOIN variants",
+      "Prevent unintentional cartesian explosion with proper ON clauses",
+      "Combine queries using UNION, UNION ALL, and INTERSECT"
+    ],
+    "estimated_minutes": 35,
+    "difficulty": "Intermediate",
+    "resource_type": "Concept Guide",
+    "summary_content": "Joins merge data across related tables based on common keys. INNER JOIN returns only records with matches in both tables. LEFT JOIN retains all rows from the left table, padding missing right attributes with NULL.",
+    "reference_url": "https://www.w3schools.com/sql/sql_join.asp"
+  },
+  {
+    "resource_id": "RES_SQL_03",
+    "subject": "SQL",
+    "topic": "Aggregations & GROUP BY",
+    "prerequisites": [
+      "Joins & Set Operations"
+    ],
+    "title": "Aggregations, GROUP BY & The HAVING Filter",
+    "description": "Understand query execution phase order: FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY.",
+    "learning_objectives": [
+      "Perform aggregate calculations with COUNT, SUM, AVG, MIN, MAX",
+      "Filter grouped aggregations using HAVING instead of WHERE",
+      "Apply multi-column GROUP BY rollups"
+    ],
+    "estimated_minutes": 30,
+    "difficulty": "Intermediate",
+    "resource_type": "Code Walkthrough",
+    "summary_content": "Understanding the logical execution order of SQL queries explains why WHERE cannot filter aggregate outputs: WHERE executes before GROUP BY, whereas HAVING executes after grouping has completed.",
+    "reference_url": "https://www.w3schools.com/sql/sql_groupby.asp"
+  },
+  {
+    "resource_id": "RES_SQL_04",
+    "subject": "SQL",
+    "topic": "Indexing & Query Optimization",
+    "prerequisites": [
+      "Aggregations & GROUP BY"
+    ],
+    "title": "Database Indexing, B-Trees & Query Execution Plans",
+    "description": "Discover how database query optimizers work, examine EXPLAIN output, evaluate B-Tree vs Hash indexes, and design covering indexes.",
+    "learning_objectives": [
+      "Interpret database EXPLAIN and EXPLAIN ANALYZE execution trees",
+      "Design composite and covering indexes for zero-heap lookups",
+      "Understand transaction isolation levels and ACID guarantees"
+    ],
+    "estimated_minutes": 45,
+    "difficulty": "Advanced",
+    "resource_type": "Concept Guide",
+    "summary_content": "Relational indexes are typically organized as balanced B-Trees. A covering index contains all attributes necessary for the query, allowing the database to fulfill the query purely from index leaves without touching physical table pages.",
+    "reference_url": "https://use-the-index-luke.com/"
+  },
+  {
+    "resource_id": "RES_ML_01",
+    "subject": "Machine Learning",
+    "topic": "Supervised Learning",
+    "prerequisites": [],
+    "title": "Foundations of Supervised Learning: Regression vs Classification",
+    "description": "Core concepts in machine learning workflows, hypothesis functions, loss formulation, and gradient descent optimization.",
+    "learning_objectives": [
+      "Distinguish continuous regression tasks from discrete classification",
+      "Formulate Mean Squared Error (MSE) and Cross-Entropy loss functions",
+      "Understand training, validation, and test split protocols"
+    ],
+    "estimated_minutes": 25,
+    "difficulty": "Beginner",
+    "resource_type": "Concept Guide",
+    "summary_content": "Supervised learning maps input features X to labeled targets Y. When Y is continuous, it is a regression problem; when Y is categorical, it is a classification problem. Models minimize an empirical loss function via optimization algorithms.",
+    "reference_url": "https://scikit-learn.org/stable/supervised_learning.html"
+  },
+  {
+    "resource_id": "RES_ML_02",
+    "subject": "Machine Learning",
+    "topic": "Model Evaluation & Metrics",
+    "prerequisites": [
+      "Supervised Learning"
+    ],
+    "title": "Evaluating ML Models: MAE, RMSE, R-squared & Confusion Matrices",
+    "description": "Statistical evaluation of predictive performance, interpretation of R^2, Precision, Recall, F1-score, and ROC-AUC curves.",
+    "learning_objectives": [
+      "Compute and interpret Mean Absolute Error (MAE) and R-squared (R^2)",
+      "Diagnose precision-recall trade-offs in imbalanced datasets",
+      "Apply K-Fold cross-validation for robust performance estimation"
+    ],
+    "estimated_minutes": 35,
+    "difficulty": "Intermediate",
+    "resource_type": "Interactive Tutorial",
+    "summary_content": "MAE provides intuitive error measurement in original units, whereas RMSE penalizes large outlier errors quadratically. R-squared indicates the proportion of target variance explained by the input features relative to a naive mean baseline.",
+    "reference_url": "https://scikit-learn.org/stable/modules/model_evaluation.html"
+  },
+  {
+    "resource_id": "RES_ML_03",
+    "subject": "Machine Learning",
+    "topic": "Preprocessing & Feature Engineering",
+    "prerequisites": [
+      "Supervised Learning"
+    ],
+    "title": "Feature Engineering & Data Pipelines with Scikit-learn",
+    "description": "Handling missing data, one-hot encoding, feature normalization (StandardScaler), polynomial expansion, and Scikit-learn Pipelines.",
+    "learning_objectives": [
+      "Prevent data leakage by fitting transformers strictly on training sets",
+      "Construct unified scikit-learn Pipeline and ColumnTransformer workflows",
+      "Scale continuous features for gradient- and distance-based estimators"
+    ],
+    "estimated_minutes": 40,
+    "difficulty": "Intermediate",
+    "resource_type": "Code Walkthrough",
+    "summary_content": "Data leakage occurs when test data inadvertently informs training transformations. Using Scikit-Learn `Pipeline` ensures scalers and encoders are fitted solely on training splits, preserving genuine out-of-sample evaluation.",
+    "reference_url": "https://scikit-learn.org/stable/modules/preprocessing.html"
+  },
+  {
+    "resource_id": "RES_ML_04",
+    "subject": "Machine Learning",
+    "topic": "Overfitting & Regularization",
+    "prerequisites": [
+      "Model Evaluation & Metrics"
+    ],
+    "title": "Bias-Variance Tradeoff & Regularization (Lasso, Ridge, ElasticNet)",
+    "description": "Understanding overfitting, mathematical formulations of L1 and L2 weight penalties, and hyperparameter tuning.",
+    "learning_objectives": [
+      "Diagnose high bias (underfitting) vs high variance (overfitting)",
+      "Compare geometric contours of L1 (diamond) vs L2 (circular) constraints",
+      "Tune regularization strength alpha using GridSearchCV"
+    ],
+    "estimated_minutes": 45,
+    "difficulty": "Advanced",
+    "resource_type": "Concept Guide",
+    "summary_content": "Regularization combats overfitting by adding a penalty term proportional to weight magnitudes into the loss function. Ridge (L2) prevents coefficients from growing excessively large, while Lasso (L1) can force redundant coefficients to zero.",
+    "reference_url": "https://scikit-learn.org/stable/modules/linear_model.html"
+  }
+]
