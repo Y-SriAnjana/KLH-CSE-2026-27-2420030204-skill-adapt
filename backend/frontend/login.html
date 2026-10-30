@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login - SkillAdapt</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-subtle) 100%);
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-xl);
+    }
+    .auth-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .auth-demo-box {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background-color: var(--primary-subtle);
+      border: 1px dashed #7dd3fc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div class="auth-header">
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+        <div class="brand-icon">S</div>
+        <div class="brand-name">Skill<span>Adapt</span></div>
+      </div>
+      <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--text-main);">Student Sign In</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
+        Enter your credentials to access your adaptive learning dashboard.
+      </p>
+    </div>
+
+    <div id="auth-alert" class="alert" style="display: none;"></div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" class="form-input" placeholder="e.g. demo_student" required autocomplete="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required autocomplete="current-password">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; padding: 0.75rem;">
+        Sign In &rarr;
+      </button>
+    </form>
+
+    <div class="auth-demo-box">
+      <div style="font-size: 0.85rem; font-weight: 600; color: var(--primary-hover); margin-bottom: 0.25rem;">
+        College Project Demo Account
+      </div>
+      <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+        User: <code>demo_student</code> | Pass: <code>Student@123</code>
+      </div>
+      <button type="button" id="btn-fill-demo" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.35rem 0.85rem;">
+        Auto-Fill Demo Credentials
+      </button>
+    </div>
+
+    <div style="text-align: center; margin-top: 1.75rem; font-size: 0.9rem; color: var(--text-muted);">
+      Don't have an account yet? 
+      <a href="register.html" style="font-weight: 600; color: var(--primary);">Register here</a>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Auto-fill if redirected from index
+    if (localStorage.getItem('autofill_demo') === '1') {
+      localStorage.removeItem('autofill_demo');
+      document.getElementById('username').value = 'demo_student';
+      document.getElementById('password').value = 'Student@123';
+    }
+  </script>
+</body>
+</html>

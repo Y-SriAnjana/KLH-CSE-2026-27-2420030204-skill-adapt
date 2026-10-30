@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - SkillAdapt</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar rendered via JavaScript -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Page Header -->
+      <header class="page-header">
+        <div>
+          <h1 class="page-title" id="welcome-message">Welcome to SkillAdapt</h1>
+          <p class="page-subtitle">Your personalized, performance-adaptive computer science learning dashboard.</p>
+        </div>
+        <div>
+          <a href="quiz.html" class="btn btn-primary">
+            <svg style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+            Take Adaptive Quiz
+          </a>
+        </div>
+      </header>
+
+      <!-- Loading State -->
+      <div id="loading-indicator" style="text-align: center; padding: 3rem;">
+        <div style="font-size: 1.1rem; color: var(--text-muted);">
+          Loading your personalized academic intelligence metrics...
+        </div>
+      </div>
+
+      <!-- Dashboard Content (Loaded via API) -->
+      <div id="dashboard-content" style="display: none;">
+        
+        <!-- Top Stat Cards -->
+        <section class="grid-cols-4">
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg style="width:24px;height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Overall Average</span>
+              <span class="stat-value" id="stat-avg-score">0%</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon purple">
+              <svg style="width:24px;height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+              </svg>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Quizzes Completed</span>
+              <span class="stat-value" id="stat-total-quizzes">0</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg style="width:24px;height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Completed Modules</span>
+              <span class="stat-value" id="stat-completed-topics">0</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon amber">
+              <svg style="width:24px;height:24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Learning Tier</span>
+              <span class="stat-value" id="stat-learning-level" style="font-size: 1.3rem;">Beginner</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- AI Performance Forecast Section -->
+        <section id="ai-prediction-section"></section>
+
+        <!-- Strongest and Weakest Topics Banner -->
+        <section class="grid-cols-2" style="margin-bottom: 2rem;">
+          <div class="card" style="border-left: 4px solid var(--success);">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--success-text); text-transform: uppercase; margin-bottom: 0.35rem;">
+              &starf; Strongest Topic
+            </div>
+            <div id="highlight-strongest" style="font-size: 1.25rem; font-weight: 700; color: var(--text-main);">
+              Calculating...
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">
+              Demonstrating 80%+ accuracy. Ready for advanced practice quizzes.
+            </p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--danger);">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--danger-text); text-transform: uppercase; margin-bottom: 0.35rem;">
+              &Delta; Priority Improvement Area
+            </div>
+            <div id="highlight-weakest" style="font-size: 1.25rem; font-weight: 700; color: var(--text-main);">
+              Calculating...
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem;">
+              Accuracy below 50%. Foundational guides prioritized in your Learning Path.
+            </p>
+          </div>
+        </section>
+
+        <!-- Chart.js Visualizations Grid -->
+        <section class="grid-cols-2">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Score Progression Over Time</h2>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Historical Quiz Attempts</span>
+            </div>
+            <div style="height: 280px; position: relative;">
+              <canvas id="progressChart"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Topic Mastery & Accuracy</h2>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Assessed Performance</span>
+            </div>
+            <div style="height: 280px; position: relative;">
+              <canvas id="topicChart"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recent Activity Table -->
+        <section class="card" style="margin-top: 2rem;">
+          <div class="card-header">
+            <h2 class="card-title">Recent Quiz Activity</h2>
+            <a href="quiz.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.85rem;">
+              Start New Quiz &rarr;
+            </a>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Date & Time</th>
+                  <th>Adaptive Breakdown</th>
+                  <th>Score Earned</th>
+                  <th>Mastery</th>
+                </tr>
+              </thead>
+              <tbody id="recent-activity-body">
+                <!-- Populated dynamically via dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

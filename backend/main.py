@@ -40,13 +40,46 @@ from predictor import predict_future_performance
 from scripts.train_model import train_and_evaluate
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FRONTEND_DIR = os.path.join(os.path.dirname(BASE_DIR), "frontend")
+
+# Robust multi-location candidate search for frontend directory
+candidate_frontend_dirs = [
+    os.path.join(os.path.dirname(BASE_DIR), "frontend"), # Sibling of backend
+    os.path.join(BASE_DIR, "frontend"),                 # Inside backend (isolated root deployments)
+    os.path.join(os.getcwd(), "frontend"),              # Current working directory
+    os.path.join(os.getcwd(), "ase project", "frontend"), # Nested inside 'ase project'
+    os.path.join(os.path.dirname(BASE_DIR), "ase project", "frontend")
+]
+FRONTEND_DIR = None
+for candidate in candidate_frontend_dirs:
+    if os.path.exists(candidate) and os.path.isdir(candidate):
+        FRONTEND_DIR = os.path.abspath(candidate)
+        break
 
 app = FastAPI(
     title="SkillAdapt API",
     description="Adaptive AI-Based Personalized Learning Assistant REST Backend",
     version="1.0.0"
 )
+
+@app.on_event("startup")
+def on_startup_check():
+    """Ensure data files and models exist upon application launch."""
+    questions_file = os.path.join(BASE_DIR, "data", "questions.json")
+    if not os.path.exists(questions_file) or os.path.getsize(questions_file) == 0:
+        try:
+            print("[INFO] Questions file missing or empty. Seeding initial data...")
+            from scripts.seed_data import seed_all
+            seed_all()
+        except Exception as e:
+            print(f"[WARN] Startup seed data check: {e}")
+
+    model_file = os.path.join(BASE_DIR, "models", "performance_predictor.joblib")
+    if not os.path.exists(model_file) or os.path.getsize(model_file) == 0:
+        try:
+            print("[INFO] Model weights missing. Training performance predictor...")
+            train_and_evaluate()
+        except Exception as e:
+            print(f"[WARN] Startup model check: {e}")
 
 # Enable CORS for local development origins
 app.add_middleware(
@@ -269,5 +302,15 @@ def export_csv_report(current_user: Dict[str, Any] = Depends(get_current_user)):
 
 # ----------------- STATIC FRONTEND HOSTING -----------------
 # Serve frontend assets directly through FastAPI
-if os.path.exists(FRONTEND_DIR):
+if FRONTEND_DIR and os.path.exists(FRONTEND_DIR):
+    print(f"[INFO] Serving frontend assets from: {FRONTEND_DIR}")
     app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
+else:
+    print("[WARN] Frontend directory could not be located; running in API-only mode.")
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    host = os.environ.get("HOST", "0.0.0.0")
+    print(f"Starting SkillAdapt server on http://{host}:{port}")
+    uvicorn.run("main:app", host=host, port=port, reload=False)

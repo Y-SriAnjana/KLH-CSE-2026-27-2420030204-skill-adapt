@@ -436,5 +436,203 @@
     ],
     "started_at": "2026-10-28T10:54:14.914022",
     "completed_at": "2026-10-28T10:54:14.915754"
+  },
+  {
+    "attempt_id": "att_c0617776f52c",
+    "user_id": "std_demo_01",
+    "subject": "SQL",
+    "topic": "Aggregations & GROUP BY",
+    "total_questions": 8,
+    "correct_answers": 1,
+    "score": 1,
+    "max_score": 11,
+    "percentage": 9.1,
+    "difficulty_breakdown": {
+      "Easy": 5,
+      "Medium": 3,
+      "Hard": 0
+    },
+    "adaptive_path": [
+      "Easy",
+      "Easy",
+      "Easy",
+      "Easy",
+      "Easy",
+      "Medium",
+      "Medium",
+      "Medium"
+    ],
+    "responses": [
+      {
+        "question_id": "SQL_011",
+        "subject": "SQL",
+        "topic": "Aggregations & GROUP BY",
+        "difficulty": "Easy",
+        "question_text": "What does the COUNT(*) function return in SQL?",
+        "selected_option": "Only rows where primary keys are positive integers",
+        "correct_answer": "The total number of rows in the table or group, including rows with NULL values",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 1,
+        "explanation": "COUNT(*) counts total rows in the target table or grouped partition, regardless of whether specific columns contain NULL."
+      },
+      {
+        "question_id": "SQL_001",
+        "subject": "SQL",
+        "topic": "SELECT & Basic Filtering",
+        "difficulty": "Easy",
+        "question_text": "Which SQL clause is used to eliminate duplicate rows from a query result set?",
+        "selected_option": "UNIQUE",
+        "correct_answer": "DISTINCT",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 1,
+        "explanation": "The SELECT DISTINCT syntax removes duplicate identical records from query output."
+      },
+      {
+        "question_id": "SQL_002",
+        "subject": "SQL",
+        "topic": "SELECT & Basic Filtering",
+        "difficulty": "Easy",
+        "question_text": "Which SQL operator matches a pattern containing wildcard characters such as '%' or '_'?",
+        "selected_option": "IN",
+        "correct_answer": "LIKE",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 1,
+        "explanation": "The LIKE operator evaluates pattern matches where '%' represents zero or more characters and '_' represents a single character."
+      },
+      {
+        "question_id": "SQL_009",
+        "subject": "SQL",
+        "topic": "Constraints & DDL",
+        "difficulty": "Easy",
+        "question_text": "Which SQL constraint ensures that all values in a column are distinct and cannot contain NULL values?",
+        "selected_option": "FOREIGN KEY",
+        "correct_answer": "PRIMARY KEY",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 1,
+        "explanation": "A PRIMARY KEY constraint uniquely identifies each record in a table. It implicitly enforces both UNIQUE and NOT NULL constraints."
+      },
+      {
+        "question_id": "SQL_003",
+        "subject": "SQL",
+        "topic": "Joins & Set Operations",
+        "difficulty": "Easy",
+        "question_text": "Which JOIN returns all rows from the left table and matching rows from the right table, filling nulls where there is no match?",
+        "selected_option": "LEFT OUTER JOIN",
+        "correct_answer": "LEFT OUTER JOIN",
+        "is_correct": true,
+        "marks_earned": 1,
+        "max_marks": 1,
+        "explanation": "A LEFT OUTER JOIN preserves all records from the left table regardless of whether a matching record exists in the right table."
+      },
+      {
+        "question_id": "SQL_004",
+        "subject": "SQL",
+        "topic": "Aggregations & GROUP BY",
+        "difficulty": "Medium",
+        "question_text": "What is the crucial difference between the WHERE clause and the HAVING clause in SQL?",
+        "selected_option": "WHERE only works on numeric columns; HAVING works on text",
+        "correct_answer": "WHERE filters rows before aggregation; HAVING filters aggregated groups",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 2,
+        "explanation": "WHERE filters individual rows prior to grouping, while HAVING applies conditions to aggregated metric calculations (like COUNT, SUM, AVG)."
+      },
+      {
+        "question_id": "SQL_005",
+        "subject": "SQL",
+        "topic": "Subqueries & CTEs",
+        "difficulty": "Medium",
+        "question_text": "What is a Common Table Expression (CTE) in SQL?",
+        "selected_option": "A permanent physical table created in system tablespace",
+        "correct_answer": "A temporary named result set defined using the WITH clause",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 2,
+        "explanation": "A CTE is a temporary named result set defined by `WITH cte_name AS (...)` that can be referenced within the scope of a SELECT, INSERT, UPDATE, or DELETE."
+      },
+      {
+        "question_id": "SQL_008",
+        "subject": "SQL",
+        "topic": "Joins & Set Operations",
+        "difficulty": "Medium",
+        "question_text": "What does a FULL OUTER JOIN produce in SQL?",
+        "selected_option": "Cartesian product of all rows without checking conditions",
+        "correct_answer": "All rows from both tables, filling NULL where join conditions are not met on either side",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 2,
+        "explanation": "FULL OUTER JOIN combines the results of both LEFT and RIGHT outer joins, outputting all rows and padding nulls where no match occurs."
+      }
+    ],
+    "started_at": "2026-10-28T11:23:35.873034",
+    "completed_at": "2026-10-28T11:24:10.133621"
+  },
+  {
+    "attempt_id": "att_1a381833aa04",
+    "user_id": "std_demo_01",
+    "subject": "Python",
+    "topic": "Python Basics & Syntax",
+    "total_questions": 3,
+    "correct_answers": 2,
+    "score": 2,
+    "max_score": 4,
+    "percentage": 50.0,
+    "difficulty_breakdown": {
+      "Easy": 2,
+      "Medium": 1,
+      "Hard": 0
+    },
+    "adaptive_path": [
+      "Easy",
+      "Medium",
+      "Easy"
+    ],
+    "responses": [
+      {
+        "question_id": "PY_002",
+        "subject": "Python",
+        "topic": "Python Basics & Syntax",
+        "difficulty": "Easy",
+        "question_text": "What is the output of bool('False') in Python?",
+        "selected_option": "True",
+        "correct_answer": "True",
+        "is_correct": true,
+        "marks_earned": 1,
+        "max_marks": 1,
+        "explanation": "Any non-empty string in Python evaluates to True in a boolean context, regardless of string contents."
+      },
+      {
+        "question_id": "PY_008",
+        "subject": "Python",
+        "topic": "Control Flow & Loops",
+        "difficulty": "Medium",
+        "question_text": "When does the `else` clause attached to a Python `for` or `while` loop execute?",
+        "selected_option": "Deliberately Wrong Answer That Never Matches",
+        "correct_answer": "Whenever the loop terminates normally without encountering a `break` statement",
+        "is_correct": false,
+        "marks_earned": 0,
+        "max_marks": 2,
+        "explanation": "A loop's `else` block runs when the loop finishes its iterations without being interrupted by a `break`."
+      },
+      {
+        "question_id": "PY_001",
+        "subject": "Python",
+        "topic": "Python Basics & Syntax",
+        "difficulty": "Easy",
+        "question_text": "Which of the following is an immutable data type in Python?",
+        "selected_option": "Tuple",
+        "correct_answer": "Tuple",
+        "is_correct": true,
+        "marks_earned": 1,
+        "max_marks": 1,
+        "explanation": "Tuples in Python cannot be modified once created, making them immutable. Lists, dictionaries, and sets are mutable."
+      }
+    ],
+    "started_at": "2026-10-30T14:03:33.994910",
+    "completed_at": "2026-10-30T14:03:33.997834"
   }
 ]

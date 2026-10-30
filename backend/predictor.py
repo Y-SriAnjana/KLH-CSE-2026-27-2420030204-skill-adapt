@@ -21,11 +21,17 @@ MODEL_PATH = os.path.join(BASE_DIR, "models", "performance_predictor.joblib")
 METRICS_PATH = os.path.join(BASE_DIR, "models", "metrics.json")
 
 def load_prediction_model():
-    """Load serialized scikit-learn pipeline or retrain if missing."""
+    """Load serialized scikit-learn pipeline or retrain if missing or incompatible."""
     if not os.path.exists(MODEL_PATH):
         from scripts.train_model import train_and_evaluate
         train_and_evaluate()
-    return joblib.load(MODEL_PATH)
+    try:
+        return joblib.load(MODEL_PATH)
+    except Exception as e:
+        print(f"[WARN] Error loading saved model ({e}). Retraining dynamically...")
+        from scripts.train_model import train_and_evaluate
+        train_and_evaluate()
+        return joblib.load(MODEL_PATH)
 
 def load_model_metrics() -> Dict[str, Any]:
     """Load saved model evaluation metrics."""
